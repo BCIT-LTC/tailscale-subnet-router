@@ -87,7 +87,7 @@ func main() {
 	}
 
 	fmt.Println("tailscale-router: running tailscale up")
-	upcmd := exec.Command("bash", "-c", fmt.Sprintf("%s up --authkey=%s --advertise-routes=%s", tailscale_binary_path, key, subnet))
+	upcmd := exec.Command("bash", "-c", fmt.Sprintf("%s up --authkey=%s --hostname=bcit-ltc-subnet-router --advertise-routes=%s", tailscale_binary_path, key, subnet))
 	err = upcmd.Run()
 	if err != nil {
 		panic(err)

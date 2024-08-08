@@ -1,0 +1,19 @@
+# fly.toml app configuration file generated for bcit-ltc-subnet-router-crimson-sun-1032 on 2024-08-08T12:50:41-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'bcit-ltc-subnet-router'
+primary_region = 'yyz'
+
+[env]
+  TS_HOSTNAME = 'bcit-ltc-subnet-router'
+
+[build]
+
+[[vm]]
+  size = 'shared-cpu-1x'
+
+[deploy]
+#  release_command = " tailscale down"
+  strategy = "canary"
